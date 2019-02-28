@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas" width='1024' height="700" style="border: 1px solid #ccc; display: block; margin: 0 auto"></canvas>
+<script>
+  var canvas = document.getElementById('canvas')
+  if (canvas.getContext('2d')) {
+    var context = canvas.getContext('2d')
+    context.moveTo(100,100)
+    context.lineTo(600,600)
+    context.lineTo(100,600)
+    context.lineTo(100,100)
+    context.fillStyle = 'red'
+    context.fill()
+    context.beginPath()
+    context.strokeWidth = 5
+    context.strokeStyle = '#000'
+    context.stroke()
+    context.closePath()
+  } else {
+    
+  }
+</script>
+</body>
+</html>
