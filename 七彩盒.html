@@ -7,6 +7,39 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <canvas id="canvas" width="1024" height="700"></canvas>
+  <style>
+    canvas {
+      border: 1px solid #ccc;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas')
+      if (canvas.getContext) {
+        var context = canvas.getContext('2d')
+        context.moveTo(100, 100);
+        context.lineTo(600, 100);
+        context.lineTo(350, 350);
+        context.lineTo(100, 100);
+        context.stroke();
+        context.moveTo(100, 100);
+        context.lineTo(100, 600);
+        context.lineTo(350, 350);
+        context.lineTo(100, 100);
+        context.stroke();
+        context.moveTo(100, 600);
+        context.lineTo(300, 600);
+        context.lineTo(200, 500);
+        context.lineTo(100, 600);
+        context.stroke()
+        
+      } else {
+        
+      }
+    }
+  </script>
 </body>
 </html>
