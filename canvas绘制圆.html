@@ -7,6 +7,18 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <canvas id="canvas" height="700" width="1024" style="border: 1px solid #ccc;display: block;margin: 0 auto"></canvas>
+  <script>
+    var canvas = document.getElementById('canvas')
+    if (canvas.getContext('2d')) {
+      var context = canvas.getContext("2d");
+      context.lineWidth = 5;
+      context.strokeStyle='red';
+      context.arc(300, 300, 200, 0, 1.5*Math.PI);
+      context.stroke();
+      
+      
+    }
+  </script>
 </body>
 </html>
