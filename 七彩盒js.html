@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    var arr = [
+      {p:[{x:100, y:100},{x:600, y:100},{x:350, y:350},{x:100, y:100}],color: '#ccf063'},
+      {p:[{x:100, y:100},{x:100, y:600},{x:350, y:350},{x:100, y:100}],color: '#5fb6d1'},
+      {p:[{x:100, y:600},{x:350, y:600},{x:220, y:480},{x:100, y:600}],color: '#ff9ccf'},
+      {p:[{x:350, y:600},{x:600, y:600},{x:600, y:350},{x:350, y:600}],color: '#ffc421'},
+      {p:[{x:350, y:600},{x:475, y:475},{x:350, y:350},{x:220, y:480},{x:350, y:600}],color: '#a899c4'},
+      {p:[{x:600, y:100},{x:600, y:350},{x:475, y:475},{x:475, y:225},{x:600, y:100}],color: '#ff5063'},
+      {p:[{x:475, y:475},{x:475, y:225},{x:350, y:350},{x:475, y:475}],color: '#feea13'},
+    ]
+    var canvas = document.getElementById('canvas')
+    if (canvas.getContext('2d')) {
+      var context = canvas.getContext('2d')
+    }
+  </script>
+</body>
+</html>
