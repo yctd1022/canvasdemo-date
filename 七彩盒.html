@@ -20,44 +20,71 @@
       var canvas = document.getElementById('canvas')
       if (canvas.getContext) {
         var context = canvas.getContext('2d')
+        context.beginPath()
         context.moveTo(100, 100);
         context.lineTo(600, 100);
         context.lineTo(350, 350);
         context.lineTo(100, 100);
-        context.stroke();
+        context.fillStyle='#ccf063';
+        context.fill()
+        context.closePath()
+        context.beginPath()
         context.moveTo(100, 100);
         context.lineTo(100, 600);
         context.lineTo(350, 350);
         context.lineTo(100, 100);
-        context.stroke();
+        context.fillStyle='#5fb6d1';
+        context.fill();
+        context.closePath()
+        context.beginPath()
         context.moveTo(100, 600);
         context.lineTo(350, 600);
         context.lineTo(220, 480);
         context.lineTo(100, 600);
-        context.stroke()
+        context.fillStyle='#ff9ccf';
+        context.fill();
+        context.closePath()
+        // context.stroke()
+        context.beginPath()
         context.moveTo(350, 600);
         context.lineTo(600, 600);
         context.lineTo(600, 350);
         context.lineTo(350, 600);
-        context.stroke()
+        context.fillStyle='#ffc421';
+        context.fill();
+        context.closePath()
+        context.beginPath()
+        // context.stroke()
         context.moveTo(350, 600);
         context.lineTo(475, 475);
         context.lineTo(350, 350);
         context.lineTo(220, 480);
         context.lineTo(350, 600);
-        context.stroke()
+        context.fillStyle='#a899c4';
+        context.fill();
+        context.closePath()
+        context.beginPath()
+
+        // context.stroke()
         context.moveTo(600, 100);
         context.lineTo(600, 350);
         context.lineTo(475, 475);
         context.lineTo(475, 225);
         context.lineTo(600, 100);
-        
-        context.stroke()
+        context.fillStyle='#ff5063';
+        context.fill();
+        context.beginPath()
+        context.beginPath()
+        // context.stroke()
         context.moveTo(475, 475);
         context.lineTo(475, 225);
         context.lineTo(350, 350);
         context.lineTo(475, 475);
-        context.stroke()
+        // context.stroke()
+        context.fillStyle='#feea13';
+        context.fill();
+        context.beginPath()
+        
       } else {
         
       }
