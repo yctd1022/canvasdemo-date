@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <canvas id="canvas"></canvas>
+  <canvas id="canvas" width="1024" height="700" style="border: 1px solid #ccc;display: bolck; margin: 0 auto"></canvas>
   <script>
     var arr = [
       {p:[{x:100, y:100},{x:600, y:100},{x:350, y:350},{x:100, y:100}],color: '#ccf063'},
@@ -21,6 +21,20 @@
     var canvas = document.getElementById('canvas')
     if (canvas.getContext('2d')) {
       var context = canvas.getContext('2d')
+      for (let i = 0; i < arr.length; i++) {
+        draw(arr[i],context)
+      }
+      function draw(piece,cxt) {
+        context.beginPath()
+        cxt.moveTo(piece.p[0].x, piece.p[0].y);
+        for (let i = 1; i < piece.p.length; i++){
+          cxt.lineTo(piece.p[i].x, piece.p[i].y);
+        }
+        cxt.fillStyle= piece.color;
+        
+        cxt.fill();
+        cxt.closePath()
+      }
     }
   </script>
 </body>
