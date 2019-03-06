@@ -12,6 +12,7 @@
   <script>
     window.onload = function () {
       var canvas = document.getElementById('canvas')
+      
       if (canvas.getContext) {
         var contxet = canvas.getContext('2d')
         render(contxet)
@@ -24,10 +25,16 @@
       renderDigit(0,0,parseInt(hours/10),cxt)
     }
     function renderDigit(x,y,mun,cxt) {
-      for (let i = 0; i < digit[mun].length; i++) {
-        for (let j = 0; j < digit[mun][i].length; j++) {
-          if (digit[mun][i][j] === 1) {
-            
+      var RADIUS = 8
+      cxt.fillStyle='red';
+      for (var i = 0; i < digit[mun].length; i++) {
+       for (var j = 0; j < digit[mun][i].length; j++) {
+        //  console.log(digit[mun][1][2]);
+          if (digit[mun][i][j] == 1) {
+            cxt.beginPath();
+            cxt.arc(x+j*2*(RADIUS + 1)+(RADIUS + 1), y+i*2*(RADIUS + 1)+(RADIUS + 1), RADIUS, 0, 2 * Math.PI);
+            cxt.closePath();
+            cxt.fill();
           }
         }
       }
