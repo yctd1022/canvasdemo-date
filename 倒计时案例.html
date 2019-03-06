@@ -8,9 +8,22 @@
   <script src="./js/digit.js"></script>
 </head>
 <body>
-  <canvas id="canvas"></canvas>
+  <canvas id="canvas" width="1024" height="700" style="display: block;margin: 0 auto;border: 1px solid #ccc"></canvas>
   <script>
     window.onload = function () {
+      var canvas = document.getElementById('canvas')
+      if (canvas.getContext) {
+        var contxet = canvas.getContext('2d')
+        render(contxet)
+      }
+    }
+    function render(cxt) {
+      var hours = 12
+      var minutes = 34
+      var seconds = 56
+      renderDigit(0,0,parseInt(hours/10),cxt)
+    }
+    function renderDigit(x,y,mun,cxt) {
       
     }
   </script>
