@@ -8,29 +8,35 @@
   <script src="./js/digit.js"></script>
 </head>
 <body>
-  <canvas id="canvas" width="1024" height="700" style="display: block;margin: 0 auto;border: 1px solid #ccc"></canvas>
+  <canvas id="canvas" style="display: block;margin: 0 auto;border: 1px solid #ccc"></canvas>
   <script>
-    window.onload = function () {
-      var canvas = document.getElementById('canvas')
-      
-      if (canvas.getContext) {
-        var contxet = canvas.getContext('2d')
-        render(contxet)
-      }
+    let MINDOW_WIDTH = 1024
+    let MINDOW_HEIGHT = 700
+    let MARGIN_TOP = 60;
+    let MARGIN_LEFT = 30;
+    var RADIUS = 8
+    var canvas = document.getElementById('canvas')
+    if (canvas.getContext) {
+      var contxet = canvas.getContext('2d')
+      canvas.width = MINDOW_WIDTH;
+      canvas.height = MINDOW_HEIGHT;
+      render(contxet)
     }
     function render(cxt) {
       var hours = 12
       var minutes = 34
       var seconds = 56
-      renderDigit(0,0,parseInt(hours/10),cxt)
-      // renderDigit(0,0,parseInt(minutes/10),cxt)
-      // renderDigit(0,0,parseInt(seconds/10),cxt)
-      // renderDigit(0,0,parseInt(hours%10),cxt)
-      // renderDigit(0,0,parseInt(minutes%10),cxt)
-      // renderDigit(0,0,parseInt(seconds%10),cxt)
+      renderDigit(MARGIN_LEFT,MARGIN_TOP,parseInt(hours/10),cxt)
+      renderDigit(MARGIN_LEFT + 15 * (RADIUS + 1),MARGIN_TOP,parseInt(hours%10),cxt)
+      renderDigit(MARGIN_LEFT + 30 * (RADIUS + 1),MARGIN_TOP,10,cxt)
+      renderDigit(MARGIN_LEFT + 39 * (RADIUS + 1),MARGIN_TOP,parseInt(minutes/10),cxt)
+      renderDigit(MARGIN_LEFT + 54 * (RADIUS + 1),MARGIN_TOP,parseInt(minutes%10),cxt)
+      renderDigit(MARGIN_LEFT + 67 * (RADIUS + 1),MARGIN_TOP,10,cxt)
+      renderDigit(MARGIN_LEFT + 76 * (RADIUS + 1),MARGIN_TOP,parseInt(seconds/10),cxt)
+      renderDigit(MARGIN_LEFT + 91 * (RADIUS + 1),MARGIN_TOP,parseInt(seconds%10),cxt)
     }
     function renderDigit(x,y,mun,cxt) {
-      var RADIUS = 8
+      
       cxt.fillStyle='red';
       for (var i = 0; i < digit[mun].length; i++) {
        for (var j = 0; j < digit[mun][i].length; j++) {
