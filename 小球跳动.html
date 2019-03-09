@@ -20,6 +20,10 @@
       ball.x += ball.vx
       ball.y += ball.vy
       ball.vy += ball.g
+      if (ball.y >= 700 - ball.r) {
+        ball.y = 700 - ball.r
+        ball.vy = -ball.vy * 0.6
+      }
     }
     function render(context) {
       context.clearRect(0, 0, 1024, 700);
