@@ -12,12 +12,16 @@
     var ball = {x:512,y:100,r:20,g:2,vx:-4,vy:0,color:'red'}
     var canvas = document.getElementById('canvas')
     var context = canvas.getContext('2d')
+    setInterval(function()  {
+      render(context)
+      updata()
+    },50)
     function updata() {
       ball.x += ball.vx
       ball.y += ball.vy
       ball.vy += ball.g
     }
-    function render(content) {
+    function render(context) {
       context.clearRect(0, 0, 1024, 700);
       context.fillStyle=ball.color;
       context.beginPath();
