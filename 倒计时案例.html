@@ -15,6 +15,10 @@
     let MARGIN_TOP = 60;
     let MARGIN_LEFT = 30;
     var RADIUS = 8
+    var MyDate = new Date()
+    var hours = MyDate.getHours()
+    var minutes = MyDate.getMinutes()
+    var seconds = MyDate.getSeconds()
     var canvas = document.getElementById('canvas')
     if (canvas.getContext) {
       var contxet = canvas.getContext('2d')
@@ -23,9 +27,6 @@
       render(contxet)
     }
     function render(cxt) {
-      var hours = 12
-      var minutes = 34
-      var seconds = 56
       renderDigit(MARGIN_LEFT,MARGIN_TOP,parseInt(hours/10),cxt)
       renderDigit(MARGIN_LEFT + 15 * (RADIUS + 1),MARGIN_TOP,parseInt(hours%10),cxt)
       renderDigit(MARGIN_LEFT + 30 * (RADIUS + 1),MARGIN_TOP,10,cxt)
