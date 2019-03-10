@@ -43,6 +43,24 @@
       } else if (seconds != newSeconds) {
         seconds = newSeconds
       }
+      if (newHours / 10 != hours / 10) {
+        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours / 10))
+      }
+      if (newHours % 10 != hours % 10) {
+        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours % 10))
+      }
+      if (newMinutes / 10 != minutes / 10) {
+        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours / 10))
+      }
+      if (newMinutes % 10 != minutes % 10) {
+        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours % 10))
+      }
+      if (seconds / 10 != newSeconds / 10) {
+        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours / 10))
+      }
+      if (seconds % 10 != newSeconds % 10) {
+        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours % 10))
+      }
     }
     function render(cxt) {
       cxt.clearRect(0, 0, MINDOW_WIDTH, MINDOW_HEIGHT);
