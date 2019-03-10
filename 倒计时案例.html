@@ -47,20 +47,23 @@
         addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours / 10))
       }
       if (newHours % 10 != hours % 10) {
-        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours % 10))
+        addBalls(MARGIN_LEFT + 15 * (RADIUS + 1),MARGIN_TOP,parseInt(hours % 10))
       }
       if (newMinutes / 10 != minutes / 10) {
-        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours / 10))
+        addBalls(MARGIN_LEFT + 39 * (RADIUS + 1),MARGIN_TOP,parseInt(hours / 10))
       }
       if (newMinutes % 10 != minutes % 10) {
-        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours % 10))
+        addBalls(MARGIN_LEFT + 54 * (RADIUS + 1),MARGIN_TOP,parseInt(hours % 10))
       }
       if (seconds / 10 != newSeconds / 10) {
-        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours / 10))
+        addBalls(MARGIN_LEFT + 78 * (RADIUS + 1),MARGIN_TOP,parseInt(hours / 10))
       }
       if (seconds % 10 != newSeconds % 10) {
-        addBalls(MARGIN_LEFT + 0,MARGIN_TOP,parseInt(hours % 10))
+        addBalls(MARGIN_LEFT + 94 * (RADIUS + 1),MARGIN_TOP,parseInt(hours % 10))
       }
+    }
+    function addBalls(x,y,mun) {
+      
     }
     function render(cxt) {
       cxt.clearRect(0, 0, MINDOW_WIDTH, MINDOW_HEIGHT);
