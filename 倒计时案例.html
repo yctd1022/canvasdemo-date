@@ -61,9 +61,35 @@
       if (seconds % 10 != newSeconds % 10) {
         addBalls(MARGIN_LEFT + 94 * (RADIUS + 1),MARGIN_TOP,parseInt(hours % 10))
       }
+      uadateBalls()
+    }
+    function uadateBalls() {
+      for (let i = 0; i < dall.length; i++) {
+        dall[i].x += dall[i].vx
+        dall[i].y += dall[i].vy
+        dall[i],vy += dall[i].g
+        if (dall[i].y >= MINDOW_HEIGHT - RADIUS) {
+          dall[i].y = MINDOW_HEIGHT - RADIUS
+          dall[i].vy = -dall[i].vy * 0.75
+        }
+      }
     }
     function addBalls(x,y,mun) {
-      
+      for (let i = 0; i < digit[mun].length; i++) {
+        for (let j = 0; j < digit[mun][i].length; j++) {
+          if (digit[mun][i][j] === 1) {
+            var aBall = {
+              x:x + j * 2 * (RADIUS + 1) + (RADIUS + 1),
+              y:y + i * 2 * (RADIUS + 1) + (RADIUS + 1),
+              g:1.5 + Math.random(),
+              vx:Math.pow(-1,Math.ceil(Math.random()*1000))*4,
+              vy:-5,
+              color: colors[ Math.floor( Math.random() * colors.length)]
+            }
+          }
+          dall.push(aBall)
+        }
+      }
     }
     function render(cxt) {
       cxt.clearRect(0, 0, MINDOW_WIDTH, MINDOW_HEIGHT);
@@ -75,6 +101,14 @@
       renderDigit(MARGIN_LEFT + 69 * (RADIUS + 1),MARGIN_TOP,10,cxt)
       renderDigit(MARGIN_LEFT + 78 * (RADIUS + 1),MARGIN_TOP,parseInt(seconds/10),cxt)
       renderDigit(MARGIN_LEFT + 94 * (RADIUS + 1),MARGIN_TOP,parseInt(seconds%10),cxt)
+      for (let i = 0; i < dall.length; i++) {
+        cxt.fillStyle=dall[i].color;
+        context.beginPath();
+        context.arc(dall[i].x, dall[i].y, RADIUS, 0, 2 * Math.PI, true);
+        context.closePath();
+        context.fill();
+        
+      }
     }
     function renderDigit(x,y,mun,cxt) {
       
